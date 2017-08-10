@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowAnimationStyle">@style/Animation_Activity</item>
+    </style>
+
+    <style name="Animation_Activity"
+        parent="@android:style/Animation.Activity">
+        <!--A1跳转到A2-->
+        <!--A2出现在屏幕上-->
+        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>
+        <!--A1从屏幕上消失-->
+        <item name="android:activityOpenExitAnimation">@anim/left_out</item>
+        <!--A2回退到A1-->
+        <!--A1出现在屏幕上-->
+        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>
+        <!--A2从屏幕上消失-->
+        <item name="android:activityCloseExitAnimation">@anim/right_out</item>
+    </style>
+
+</resources>
