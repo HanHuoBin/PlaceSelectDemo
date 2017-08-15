@@ -12,7 +12,6 @@ public class MainActivity extends BaseAppCatActivity {
     @Override
     protected void initView() {
         initToolBar();
-
     }
 
     @Override
