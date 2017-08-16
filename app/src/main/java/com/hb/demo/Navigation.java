@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-import com.hb.demo.placeselectdemo.MainActivity;
+import com.hb.demo.ui.CitySelectActivity;
+import com.hb.demo.ui.MainActivity;
 
 
 /**
@@ -36,5 +37,18 @@ public class Navigation {
         //                Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到城市选择页
+     *
+     * @param activity
+     * @param provinceId
+     */
+    public static void goPlaceSelectPage(Activity activity, int provinceId,String name) {
+        Intent intent = new Intent(activity, CitySelectActivity.class);
+        intent.putExtra(CitySelectActivity.EXTRA_ID, provinceId);
+        intent.putExtra(CitySelectActivity.EXTRA_NAME, name);
+        activity.startActivity(intent);
     }
 }

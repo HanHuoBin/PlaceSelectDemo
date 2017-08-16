@@ -7,11 +7,42 @@
 
     <include layout="@layout/layout_action_toolbar_no_back" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="@dimen/comment_textSize"
-        android:text="@string/hello_world"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:divider="@drawable/vertical_line"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:id="@+id/ll_city_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/city_select"
+                android:textSize="@dimen/comment_textSize" />
+
+            <TextView
+                android:id="@+id/tv_select_content"
+                android:layout_width="0dp"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/gray_text"
+                android:textSize="@dimen/text_size_14" />
+
+            <ImageView style="@style/more_tag" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>

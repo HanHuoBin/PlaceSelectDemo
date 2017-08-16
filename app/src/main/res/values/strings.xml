@@ -2,4 +2,5 @@
     <string name="app_name">PlaceSelectDemo</string>
     <string name="hello_world">hello developers</string>
     <string name="title">demo</string>
+    <string name="city_select">城市选择</string>
 </resources>

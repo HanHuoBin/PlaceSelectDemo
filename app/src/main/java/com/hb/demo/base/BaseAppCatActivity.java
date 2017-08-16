@@ -18,12 +18,15 @@ import com.hb.demo.utils.T;
 import java.util.Date;
 
 import butterknife.ButterKnife;
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
 
 
 /**
  * Created by hb on 16/3/29.
  */
 public abstract class BaseAppCatActivity extends AppCompatActivity {
+    private CompositeSubscription mCompositeSubscription;
     private long mLastBackTime = 0;
     private long TIME_DIFF = 2 * 1000;
     private Toolbar mToolbar;
@@ -70,6 +73,9 @@ public abstract class BaseAppCatActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+        if (this.mCompositeSubscription != null) {
+            this.mCompositeSubscription.unsubscribe();
+        }
     }
 
     /**
@@ -172,4 +178,11 @@ public abstract class BaseAppCatActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    public void addSubscription(Subscription s) {
+        if (this.mCompositeSubscription == null) {
+            this.mCompositeSubscription = new CompositeSubscription();
+        }
+
+        this.mCompositeSubscription.add(s);
+    }
 }
