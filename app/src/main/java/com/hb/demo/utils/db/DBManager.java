@@ -20,16 +20,20 @@ import java.util.List;
  */
 
 public class DBManager {
-    private String    DB_NAME       = "place.db";
-    private Context   mContext;
+    private String DB_NAME = "place.db";
+    private Context mContext;
     public List<City> mProvinceList = new ArrayList<>();
-    public List<City> mCityList     = new ArrayList<>();
+    public List<City> mCityList = new ArrayList<>();
 
     public DBManager(Context mContext) {
         this.mContext = mContext;
     }
 
-    //把raw目录下的db文件复制到dbpath下
+    /**
+     * 把raw目录下的db文件复制到dbpath下
+     *
+     * @return
+     */
     public SQLiteDatabase DBManager() {
         String dbPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/databases/"
                 + DB_NAME;
@@ -37,7 +41,7 @@ public class DBManager {
             try {
                 boolean flag = new File(
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/databases/")
-                                .mkdirs();
+                        .mkdirs();
                 boolean newFile = new File(dbPath).createNewFile();
                 try {
                     FileOutputStream out = new FileOutputStream(dbPath);
@@ -58,9 +62,17 @@ public class DBManager {
         return SQLiteDatabase.openOrCreateDatabase(dbPath, null);
     }
 
-    //查询选择题
+    /**
+     * 查询省
+     *
+     * @param sqliteDB
+     * @param columns
+     * @param selection
+     * @param selectionArgs
+     * @return
+     */
     public List<City> queryProvinces(SQLiteDatabase sqliteDB, String[] columns,
-                                         String selection, String[] selectionArgs) {
+                                     String selection, String[] selectionArgs) {
         City bean = null;
         try {
             String table = "provinces";
@@ -82,6 +94,15 @@ public class DBManager {
         return mProvinceList;
     }
 
+    /**
+     * 通过省获取市
+     *
+     * @param sqliteDB
+     * @param columns
+     * @param selection
+     * @param selectionArgs
+     * @return
+     */
     public List<City> queryCitysByProvinceId(SQLiteDatabase sqliteDB, String[] columns,
                                              String selection, String[] selectionArgs) {
         City bean = null;

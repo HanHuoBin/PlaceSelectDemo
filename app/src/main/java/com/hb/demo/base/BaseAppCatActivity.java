@@ -163,6 +163,7 @@ public abstract class BaseAppCatActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(final int keyCode, final KeyEvent event) {
+        //首先判断当前页面是不是最后一个页面，如果是，点击两次退出
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (isTaskRoot()) {
                 long now = new Date().getTime();

@@ -31,12 +31,12 @@ public class CitySelectActivity extends BaseAppCatActivity{
     @Bind(R.id.listView)
     ListView mListView;
     private CommonAdapter<City> mAdapter     = null;
-    private List<City> provinceList = new ArrayList<>();
+    private List<City>          provinceList = new ArrayList<>();
     private int                 provinceId   = -1;
     private String              provinceName = "";
     private String              cityName     = "";
-    private DBManager dbManager    = null;
-    private SQLiteDatabase db           = null;
+    private DBManager           dbManager    = null;
+    private SQLiteDatabase      db           = null;
 
     @Override
     protected int initLayout() {
