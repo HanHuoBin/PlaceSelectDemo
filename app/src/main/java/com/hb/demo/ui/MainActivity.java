@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.hb.demo.Navigation;
 import com.hb.demo.base.BaseAppCatActivity;
 import com.hb.demo.event.SelectSuccessEvent;
-import com.hb.demo.placeselectdemo.R;
+import com.hb.demo.R;
 import com.hb.demo.utils.RxBus.RxBus;
 import com.hb.demo.utils.helper.RxSchedulers;
 
@@ -30,7 +30,7 @@ public class MainActivity extends BaseAppCatActivity implements View.OnClickList
     @Override
     protected void initView() {
         initToolBar();
-        setOnClick(R.id.ll_city_select);
+        setOnClick(R.id.ll_city_select, R.id.ll_glide_demo);
         registerRxBus();
         initPermission();
     }
@@ -44,26 +44,32 @@ public class MainActivity extends BaseAppCatActivity implements View.OnClickList
             Log.i("TEST", "Granted");
             //init(barcodeScannerView, getIntent(), null);
         } else {
-            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA ,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE}, 1);//1 can be another integer
+            ActivityCompat.requestPermissions(this,
+                    new String[] { Manifest.permission.CAMERA,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE },
+                    1);//1 can be another integer
         }
     }
+
     private void registerRxBus() {
-        addSubscription(RxBus.getDefault().toObserverable(SelectSuccessEvent.class).compose(RxSchedulers.io_main()).subscribe(new Subscriber<SelectSuccessEvent>() {
-            @Override
-            public void onCompleted() {
+        addSubscription(RxBus.getDefault().toObserverable(SelectSuccessEvent.class)
+                .compose(RxSchedulers.io_main()).subscribe(new Subscriber<SelectSuccessEvent>() {
+                    @Override
+                    public void onCompleted() {
 
-            }
+                    }
 
-            @Override
-            public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onNext(SelectSuccessEvent selectSuccessEvent) {
-                selectContentTv.setText(selectSuccessEvent.address);
-            }
-        }));
+                    @Override
+                    public void onNext(SelectSuccessEvent selectSuccessEvent) {
+                        selectContentTv.setText(selectSuccessEvent.address);
+                    }
+                }));
     }
 
     @Override
@@ -76,6 +82,9 @@ public class MainActivity extends BaseAppCatActivity implements View.OnClickList
         switch (view.getId()) {
             case R.id.ll_city_select:
                 Navigation.goPlaceSelectPage(this, -1, "");
+                break;
+            case R.id.ll_glide_demo:
+                Navigation.goPage(this, GlideDemoActivity.class);
                 break;
         }
     }

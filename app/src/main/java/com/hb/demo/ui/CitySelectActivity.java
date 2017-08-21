@@ -11,7 +11,7 @@ import com.hb.demo.base.adapter.CommonAdapter;
 import com.hb.demo.base.adapter.ViewHolder;
 import com.hb.demo.event.SelectSuccessEvent;
 import com.hb.demo.model.db.place.City;
-import com.hb.demo.placeselectdemo.R;
+import com.hb.demo.R;
 import com.hb.demo.utils.RxBus.RxBus;
 import com.hb.demo.utils.db.DBManager;
 

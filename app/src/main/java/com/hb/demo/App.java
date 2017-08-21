@@ -2,6 +2,7 @@ package com.hb.demo;
 
 import android.app.Application;
 
+import com.hb.demo.utils.CrashHandler;
 import com.hb.demo.utils.STUtils;
 
 /**
@@ -12,6 +13,8 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(getApplicationContext());
         // 工具类初始化
         STUtils.init(this);
     }

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 
 import com.hb.demo.model.db.place.City;
-import com.hb.demo.placeselectdemo.R;
+import com.hb.demo.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

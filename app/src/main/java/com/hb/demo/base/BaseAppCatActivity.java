@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hb.demo.placeselectdemo.R;
+import com.hb.demo.R;
 import com.hb.demo.utils.IMEUtils;
 import com.hb.demo.utils.T;
 

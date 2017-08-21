@@ -33,11 +33,30 @@
             <TextView
                 android:id="@+id/tv_select_content"
                 android:layout_width="0dp"
-                android:gravity="right"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="right"
                 android:textColor="@color/gray_text"
                 android:textSize="@dimen/text_size_14" />
+
+            <ImageView style="@style/more_tag" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_glide_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_weight="1"
+                android:text="@string/glide_demo"
+                android:textSize="@dimen/comment_textSize" />
+
 
             <ImageView style="@style/more_tag" />
         </LinearLayout>

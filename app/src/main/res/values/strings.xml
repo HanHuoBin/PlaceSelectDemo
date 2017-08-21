@@ -3,4 +3,5 @@
     <string name="hello_world">hello developers</string>
     <string name="title">demo</string>
     <string name="city_select">城市选择</string>
+    <string name="glide_demo">图片加载框架Glide实例</string>
 </resources>
