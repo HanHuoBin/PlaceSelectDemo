@@ -39,15 +39,15 @@ Glide.with(context).load(url)
 
 方法说明:
 
-1.placeholder 等待加载时显示的图片
-2.error 加载失败后显示的图片
-3.crossFade 淡入淡出动画
-3.1补充：如果对于当前动画不满足，可以自定义动画，使用Glide的animate方法
-4.CenterCrop()是一个裁剪技术，即缩放图像让它填充到 ImageView 界限内并且裁剪额外的部分。ImageView 会被完全填充，但图像可能不会完整显示。
-4.1fitCenter()是一个裁剪技术，即缩放图像让图像都测量出来等于或小于 ImageView 的边界范围。该图像将会完全显示，但可能不会填满整个 ImageView。
-5.diskCacheStrategy 设置缓存策略
-5.1 DiskCacheStrategy.SOURCE：缓存原始数据
-5.2 DiskCacheStrategy.RESULT：缓存变换(如缩放、裁剪等)后的资源数据
-5.3 DiskCacheStrategy.NONE：什么都不缓存
-5.4 DiskCacheStrategy.ALL：缓存SOURCE和RESULT。
-5.5 默认采用DiskCacheStrategy.RESULT策略，对于download only操作要使用DiskCacheStrategy.SOURCE。
+    1.placeholder 等待加载时显示的图片
+    2.error 加载失败后显示的图片
+    3.crossFade 淡入淡出动画
+     3.1补充：如果对于当前动画不满足，可以自定义动画，使用Glide的animate方法
+    4.CenterCrop()是一个裁剪技术，即缩放图像让它填充到 ImageView 界限内并且裁剪额外的部分。ImageView 会被完全填充，但图像可能不会完整显示。
+     4.1fitCenter()是一个裁剪技术，即缩放图像让图像都测量出来等于或小于 ImageView 的边界范围。该图像将会完全显示，但可能不会填满整个 ImageView。
+    5.diskCacheStrategy 设置缓存策略
+     5.1 DiskCacheStrategy.SOURCE：缓存原始数据
+     5.2 DiskCacheStrategy.RESULT：缓存变换(如缩放、裁剪等)后的资源数据
+     5.3 DiskCacheStrategy.NONE：什么都不缓存
+     5.4 DiskCacheStrategy.ALL：缓存SOURCE和RESULT。
+     5.5 默认采用DiskCacheStrategy.RESULT策略，对于download only操作要使用DiskCacheStrategy.SOURCE。
